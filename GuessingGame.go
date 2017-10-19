@@ -1,6 +1,5 @@
-//Guessing game web-app Starter
+//Guessing game web-app
 //Andrew Usevas group-C
-//SOURCE:https://astaxie.gitbooks.io/build-web-application-with-golang/content/en/03.2.html
 
 package main
 
@@ -11,8 +10,8 @@ import (
 )
 
 func reqHandler(w http.ResponseWriter, r *http.Request) {
-
-	fmt.Fprintf(w, "Guessing game") //will be displayed in the body
+	w.Header().Set("Content-type", "text/html") //will render <h1> below as html
+	fmt.Fprintf(w, "<h1>Guessing game</h>")     //will be displayed in the body
 }
 
 func main() {
